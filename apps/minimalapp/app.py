@@ -87,7 +87,7 @@ def contact_complete():
             is_valid = False
 
         try:
-            validate_email(email)
+            validate_email(email) # 이메일 형식 검사 api
         except EmailNotValidError:
             flash("메일 주소의 형식으로 입력해 주세요")
             is_valid = False
@@ -105,6 +105,7 @@ def contact_complete():
     
     return render_template("contact_complete.html")
 
+# **: 딕셔너리 형태로 매개변수를 받아서 모으는 변수
 def send_email(to, subject, template, **kwargs):
     msg = Message(subject, recipients=[to])
     msg.body = render_template(template + ".txt", **kwargs)
