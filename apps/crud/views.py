@@ -7,6 +7,10 @@ crud = Blueprint(
     static_folder="static"
 )
 
+
+
+
+
 # @app.route("/") = @crud
 
 @crud.route("/")
